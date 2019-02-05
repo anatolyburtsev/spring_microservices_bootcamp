@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: ConfigClient
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka/

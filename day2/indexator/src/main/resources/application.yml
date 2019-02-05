@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: indexator
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka/
+
+
+feign.client.config.default.connectTimeout: 160000000
+feign.client.config.default.readTimeout: 160000000
