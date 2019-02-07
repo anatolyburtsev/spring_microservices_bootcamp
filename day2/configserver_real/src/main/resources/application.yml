@@ -1,0 +1,33 @@
+spring.application.name: config_server
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka/
+
+spring:
+  jpa.hibernate.ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_props?createDatabaseIfNotExist=true
+    username: springuser
+    password: ThePassword
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 5000
+      maximum-pool-size: 10
+
+  cloud:
+    config:
+      server:
+        default-profile: local
+        default-label: latest
+        jdbc:
+          sql: SELECT `key`, `value` FROM `properties` WHERE `application`=? AND `profile`=? AND `label`=?;
+          order: 0
+
+  profiles:
+    active:
+      - jdbc

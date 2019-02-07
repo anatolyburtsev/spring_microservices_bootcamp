@@ -1,0 +1,1 @@
+ALTER TABLE properties ADD label varchar(200) DEFAULT NULL;
