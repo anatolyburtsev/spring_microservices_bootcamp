@@ -32,7 +32,7 @@ public class TextSplitter {
     @Autowired
     private StoreOriginalWebClient storeOriginalWebClient;
 
-    @Value("${words.blacklist}")
+    @Value("${wordsblacklist}")
     public String[] blackListRaw;
 
     private Set<String> blackList;

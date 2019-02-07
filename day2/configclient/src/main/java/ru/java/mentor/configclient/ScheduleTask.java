@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ScheduleTask {
 
-    @Value("${my.name}")
+    @Value("${myname}")
     private String name;
 
     @RequestMapping("/name")

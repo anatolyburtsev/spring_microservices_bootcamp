@@ -1,6 +1,9 @@
 spring:
   application:
     name: indexator
+  cloud:
+    config:
+      label: latest
 
 server:
   port: 8082

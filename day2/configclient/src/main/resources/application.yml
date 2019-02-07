@@ -1,6 +1,9 @@
 spring:
   application:
-    name: ConfigClient
+    name: config_client
+  cloud:
+    config:
+      label: latest
 
 
 eureka:

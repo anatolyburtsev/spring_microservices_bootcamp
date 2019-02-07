@@ -25,8 +25,8 @@ public class StoreOriginalWebClient {
         return webClientBuilder
                 .build()
                 .post()
-//                .uri(new URI("http://storeoriginaldata/text"))
-                .uri("http://localhost:8083/text")
+                .uri("http://storeoriginaldata/text")
+//                .uri("http://localhost:8083/text")
 //                .accept(MediaType.TEXT_EVENT_STREAM)
                 .contentType(MediaType.TEXT_PLAIN)
                 .body(Mono.just(text), String.class)
