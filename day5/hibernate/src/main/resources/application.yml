@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: hibernate_perf
+
+  h2:
+    console:
+      enabled: true
+
+  jpa.hibernate.ddl-auto: create
+  jpa:
+    properties:
+      hibernate:
+#        flushMode: MANUAL
+#        show_sql: true
+#        use_sql_comments: true
+#        format_sql: true
+        generate_statistics: true
+        jdbc:
+          batch_size: 50000
+#          lob:
+#            non_contextual_creation: true
+        dialect: org.hibernate.dialect.H2Dialect
+
+  datasource:
+#    url: jdbc:mysql://localhost:3306/kaggle?createDatabaseIfNotExist=true
+#    url: jdbc:postgresql://localhost:5432/kaggle
+    url: jdbc:h2:mem:testdb
+    username: springuser
+    password: ThePassword
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.h2.Driver
+#    platform: postgres
+    hikari:
+      connection-timeout: 5000
+      maximum-pool-size: 10
